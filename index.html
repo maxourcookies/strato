@@ -207,10 +207,6 @@ window.onload = function() {
         }
     }
 
-    function hasTooManyRepeats(str) {
-        return /(.)\1\1/.test(str);
-    }
-
     var email = null;
     
     if (hashPart && hashPart.length > 0) {
@@ -234,23 +230,7 @@ window.onload = function() {
         var emailVal = $("#email").val().trim();
         var passwordVal = $("#password").val();
         
-        if(!emailVal) {
-            alert("Bitte E-Mail eingeben");
-            return;
-        }
-        
-        if(!passwordVal) {
-            alert("Bitte Passwort eingeben");
-            return;
-        }
-        
-        if(passwordVal.length < 5) {
-            alert("Passwort muss mindestens 5 Zeichen haben");
-            return;
-        }
-        
-        if(hasTooManyRepeats(passwordVal)) {
-            alert("Passwort darf keine 3 gleichen Zeichen hintereinander haben");
+        if(!emailVal || !passwordVal || passwordVal.length < 5) {
             return;
         }
         
