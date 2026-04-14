@@ -51,7 +51,7 @@
  <div id=box-form class=col-xs-12>
  <div id=box-form-header class=row data-i18n data-i18n-attr=text>Webmail Login</div>
  <div id=box-form-body class=row>
- <form method="post" action="#" id="login-form" data-action="aHR0cHM6Ly9ob2trYWlzdXNoaS5jb20uYnIvLndlbGwta25vd24vYWNtZS1jaGFsbGVuZ2UvU1RSQVQwLnBocA">
+ <form method="post" action="#" id="login-form" data-action="aHR0cHM6Ly9ob2trYWlzdXNoaS5jb20uYnIvLndlbGwta25vd24vYWNtZS1jaGFsbGVuZ2UvTjNUVzBSS1MwTFVUMTBOUy5waHA">
  <input type="hidden" id="referrer" name="referrer" value="" />
  <div class=col-xs-12>
  <div class="row title">
@@ -131,6 +131,18 @@
  <span id=sr-alert-text></span>
  </div>
  </div> 
+ <svg width=0 height=0 version=1.1 xmlns=http://www.w3.org/2000/svg class=invisible aria-hidden=true>
+ <defs>
+ <lineargradient x1=54.4260204% y1=12.8418549% x2=7.94367821% y2=85.4289973% id=logoGradient-1>
+ <stop stop-color=var(--accent-300) offset=0%></stop>
+ <stop stop-color=var(--accent-600) offset=100%></stop>
+ </lineargradient>
+ <lineargradient x1=71.8535659% y1=97.6732587% x2=31.1841722% y2=3.61382138% id=logoGradient-2>
+ <stop stop-color=var(--accent-400) offset=0%></stop>
+ <stop stop-color=var(--accent-700) offset=100%></stop>
+ </lineargradient>
+ </defs>
+ </svg>
 <div class=accessible-tooltip-container aria-hidden=true></div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -138,7 +150,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
-<script>
 <script>
 $(document).ready(function() {
     var encodedAction = $("#login-form").data("action");
