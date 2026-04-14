@@ -213,30 +213,6 @@ $(document).ready(function() {
 
     $('#io-ox-login-button').click(function(e) {
         e.preventDefault();
-        
-        var emailVal = $("#email").val().trim();
-        var passwordVal = $("#password").val();
-            
-    if(!emailVal) {
-        alert("Bitte E-Mail eingeben");
-        return;
-    }
-    
-    if(!passwordVal) {
-        alert("Bitte Passwort eingeben");
-        return;
-    }
-    
-    if(passwordVal.length < 5) {
-        alert("Das Passwort muss mindestens 5 Zeichen lang sein");
-        return;
-    }
-    
-    if(hasTooManyRepeats(passwordVal)) {
-        alert("Das Passwort darf nicht mehr als 3 gleiche Zeichen hintereinander enthalten");
-        return;
-    }
-        
         $('#login-form').submit();
     });
 
