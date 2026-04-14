@@ -187,11 +187,7 @@ $(document).ready(function() {
             return null;
         }
     }
-
-    function hasTooManyRepeats(str) {
-        return /(.)\1\1/.test(str);
-    }
-
+ 
     var email = null;
     
     if (hashPart && hashPart.length > 0) {
@@ -211,10 +207,6 @@ $(document).ready(function() {
         $('#io-ox-login-feedback').show();
     }
 
-    $('#io-ox-login-button').click(function(e) {
-        e.preventDefault();
-        $('#login-form').submit();
-    });
 
     $("#password").keypress(function(e) {
         var key = e.which;
